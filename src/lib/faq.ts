@@ -25,7 +25,7 @@ export const faqs: FaqItem[] = [
   },
   {
     id: "duplicates",
-    question: "How does Smart Duplicate Detection work?",
+    question: "How does Stashin Duplicate Detection work?",
     answer:
       "Before a link is saved, Stashin canonicalizes it. x.com and twitter.com are treated as the same post, and youtu.be and youtube.com are treated as the same video. Tracking parameters such as utm_*, igsh, and fbclid are stripped. If that canonical URL is already in your stash, Stashin warns you before saving a duplicate.",
   },
@@ -37,15 +37,15 @@ export const faqs: FaqItem[] = [
   },
   {
     id: "trial",
-    question: "How does the 7-day free trial work?",
+    question: "How does the yearly free trial work?",
     answer:
       "The yearly plan is $14.99 / year and includes a 7-day free trial for eligible Google Play accounts. Unless you cancel at least 24 hours before the trial ends, Google Play bills $14.99 and renews the year. The $1.99 monthly plan can be canceled anytime and does not include that trial. The $29.99 Lifetime Founder's Pass is charged once.",
   },
   {
     id: "drive",
-    question: "What can the Google Drive backup see?",
+    question: "What are the Google Drive backup caps?",
     answer:
-      "Only the scope https://www.googleapis.com/auth/drive.appdata, and only after you tap backup or restore in Settings. The archive is stored in the hidden appDataFolder on your own Google account, encrypted in transit with HTTPS/TLS. It is never sent to a Stashin server, and only your Google account can access it.",
+      "Stashin does not add its own storage cap. Only the scope https://www.googleapis.com/auth/drive.appdata is used, and only after you tap backup or restore in Settings. The archive is stored in the hidden appDataFolder on your own Google account, encrypted in transit with HTTPS/TLS. It is never sent to a Stashin server, and only your Google account can access it.",
   },
   {
     id: "biometrics",

@@ -1,30 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { cardsForFolder, folders, savedCards, sources } from "./stash";
+import { itemsForTab, previewItems, previewTabs } from "./stash";
 
 describe("stash preview", () => {
-  it("gives every folder at least two cards with a known source", () => {
-    for (const folder of folders) {
-      const cards = cardsForFolder(folder.id);
-      expect(cards.length).toBeGreaterThanOrEqual(2);
-      for (const card of cards) {
-        expect(sources[card.source].label).toMatch(/x\.com|YouTube|Instagram|Web/);
-        expect(card.folder).toBe(folder.label);
-        expect(card.tags.length).toBeGreaterThan(0);
-      }
-    }
+  it("shows every kind on All and only that kind on a filter", () => {
+    expect(previewTabs.map((tab) => tab.id)).toEqual(["all", "notes", "links", "tasks"]);
+    expect(itemsForTab("all")).toEqual(previewItems);
+    expect(itemsForTab("notes").map((item) => item.title)).toEqual(["Ideas for my next app"]);
+    expect(itemsForTab("links").map((item) => item.title)).toEqual(["Design inspiration"]);
+    expect(itemsForTab("tasks").map((item) => item.title)).toEqual(["Workout plan"]);
   });
 
-  it("shows duplicate and pinned badges on the default design folder", () => {
-    const badges = cardsForFolder("design").map((card) => card.badge);
-    expect(badges).toContain("duplicate");
-    expect(badges).toContain("pinned");
-  });
-
-  it("does not leak cards across folders", () => {
-    const designIds = new Set(cardsForFolder("design").map((card) => card.id));
-    for (const card of cardsForFolder("recipes")) {
-      expect(designIds.has(card.id)).toBe(false);
+  it("does not leak items across filters", () => {
+    const notes = new Set(itemsForTab("notes").map((item) => item.id));
+    for (const item of itemsForTab("links")) {
+      expect(notes.has(item.id)).toBe(false);
     }
-    expect(savedCards.length).toBe(folders.length * 2);
   });
 });

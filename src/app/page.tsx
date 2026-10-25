@@ -1,21 +1,21 @@
-import { Bento } from "@/components/Bento";
 import { ClosingCta } from "@/components/ClosingCta";
 import { Faq } from "@/components/Faq";
+import { Features } from "@/components/Features";
 import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Pricing } from "@/components/Pricing";
-import { PrivacyPromise } from "@/components/PrivacyPromise";
-import { Roadmap } from "@/components/Roadmap";
+import { Showcase } from "@/components/Showcase";
+import { Testimonials } from "@/components/Testimonials";
 
 export default function HomePage() {
   return (
     <main id="main">
       <Hero />
-      <Bento />
+      <Features />
       <HowItWorks />
-      <PrivacyPromise />
       <Pricing />
-      <Roadmap />
+      <Showcase />
+      <Testimonials />
       <Faq />
       <ClosingCta />
     </main>

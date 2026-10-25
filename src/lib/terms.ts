@@ -150,7 +150,7 @@ export const termsSections: LegalSection[] = [
     ],
   },
   {
-    id: "billing",
+    id: "refunds",
     heading: "Billing, cancellation, and refunds",
     blocks: [
       {

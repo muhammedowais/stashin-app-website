@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito, Playfair_Display } from "next/font/google";
+import { Caveat, Nunito, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { site } from "@/lib/site";
@@ -17,6 +17,13 @@ const playfair = Playfair_Display({
   weight: ["600", "700", "800"],
   style: ["normal", "italic"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -104,7 +111,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${nunito.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${nunito.variable} ${playfair.variable} ${caveat.variable}`}>
       <body className="bg-cream font-sans text-ink antialiased">
         <a className="skip-link" href="#main">
           Skip to content

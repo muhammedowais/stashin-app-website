@@ -19,14 +19,13 @@ vi.mock("next/link", () => ({
 }));
 
 describe("Navbar", () => {
-  it("exposes the editorial navigation and the free download call to action", () => {
+  it("exposes the mockup navigation and the free download call to action", () => {
     render(<Navbar />);
     expect(screen.getAllByRole("link", { name: "How It Works" }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: "Features" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "Privacy Promise" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "Stashin Pro" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: "Privacy" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: "Plans" }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: "FAQ" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "Privacy Policy" }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: "Get Stashin Free" }).length).toBeGreaterThan(0);
   });
 });

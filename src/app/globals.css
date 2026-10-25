@@ -3,8 +3,9 @@
 @theme inline {
   --font-sans: var(--font-nunito), "Nunito", ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-script: var(--font-caveat), "Caveat", cursive;
 
-  --color-cream: #faf6f0;
+  --color-cream: #fbf8f4;
   --color-surface: #f2ece1;
   --color-surface-2: #f1eae0;
   --color-card: #ffffff;
