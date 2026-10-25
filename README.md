@@ -37,7 +37,9 @@ The site is a fully static export. Point the host at `out/` after `npm run build
 | Vercel | `npm run build` | `out` |
 | Cloudflare Pages | `npm run build` | `out` |
 | Netlify | `npm run build` | `out` |
-| GitHub Pages | `npm run build` | `out` |
+| GitHub Pages | `.github/workflows/deploy-pages.yml` on `main` | `out` |
+
+GitHub Pages deploys from `main` (or a manual workflow run). The workflow sets `NEXT_PUBLIC_BASE_PATH` from `actions/configure-pages`, so project-site URLs such as `/stashin-app-website/` prefix assets and routes. `public/.nojekyll` keeps Jekyll from skipping `_next/`. Leave `NEXT_PUBLIC_BASE_PATH` unset for a host at the domain root, including `https://stashin.app`.
 
 Canonical URLs use `https://stashin.app`. Trailing slashes are enabled so `/privacy/` maps cleanly on static hosts.
 
